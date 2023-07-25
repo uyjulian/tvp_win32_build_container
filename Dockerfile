@@ -5,12 +5,17 @@ ENV \
     LANG="C.UTF-8" \
     LC_ALL="C.UTF-8"
 
-RUN brew install bash curl gzip bzip2 xz zstd p7zip node git make nasm cmake ninja mingw-w64 && \
+RUN brew install bash curl gnu-tar gzip bzip2 xz zstd p7zip openssl lhasa unzip gpatch dos2unix perl node git make nasm cmake ninja mingw-w64 && \
     brew cleanup -s
 RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20220906/llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
     tar xf llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
     sudo mv llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64 /opt/llvm-mingw && \
     rm llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz
+RUN sudo dpkg --add-architecture i386 && \
+    sudo apt-get update && \
+    sudo apt-get upgrade -y && \
+    sudo apt-get -o apt::install-recommends=true install wine wine32 wine64 wine64-tools fonts-wine -y && \
+    sudo apt-get install xvfb libgl1-mesa-glx libgl1-mesa-glx:i386 libgl1:i386 libglx-mesa0:i386 libgl1-mesa-dri:i386 unzip fonts-liberation openbox x11-utils -y
 
 LABEL \
     org.opencontainers.image.source="https://github.com/uyjulian/tvp_win32_build_container" \
