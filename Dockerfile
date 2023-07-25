@@ -6,7 +6,8 @@ ENV \
     LC_ALL="C.UTF-8"
 
 RUN brew install bash curl gnu-tar gzip bzip2 xz zstd p7zip openssl lhasa unzip gpatch dos2unix perl node git make nasm cmake ninja mingw-w64 && \
-    brew cleanup -s
+    brew cleanup -s && \
+    rm -rf $(brew --cache)
 RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20220906/llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
     tar xf llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
     sudo mv llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64 /opt/llvm-mingw && \
