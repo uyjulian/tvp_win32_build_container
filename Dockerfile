@@ -2,8 +2,8 @@
 FROM ghcr.io/homebrew/ubuntu20.04:latest
 
 ENV \
-    LANG="C.UTF-8" \
-    LC_ALL="C.UTF-8"
+    LANG="en_US.UTF-8" \
+    LC_ALL="en_US.UTF-8"
 
 RUN brew update && \
     brew upgrade && \
