@@ -1,5 +1,5 @@
 
-FROM homebrew/ubuntu18.04:latest
+FROM ghcr.io/homebrew/ubuntu18.04:latest
 
 ENV \
     LANG="C.UTF-8" \
