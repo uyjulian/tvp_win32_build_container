@@ -5,7 +5,8 @@ ENV \
     LANG="C.UTF-8" \
     LC_ALL="C.UTF-8"
 
-RUN brew install bash curl gzip bzip2 xz zstd p7zip node git make nasm cmake ninja mingw-w64
+RUN brew install bash curl gzip bzip2 xz zstd p7zip node git make nasm cmake ninja mingw-w64 && \
+    brew cleanup -s
 RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20220906/llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
     tar xf llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
     sudo mv llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64 /opt/llvm-mingw && \
