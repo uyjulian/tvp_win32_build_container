@@ -13,10 +13,10 @@ RUN brew update && \
     brew install bash curl gnu-tar gzip bzip2 xz zstd p7zip openssl lhasa unzip gpatch dos2unix perl bc autoconf automake libtool pkg-config bison node git make nasm cmake ninja mingw-w64 && \
     brew cleanup -s && \
     rm -rf $(brew --cache)
-RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20220906/llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
-    tar xf llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz && \
-    sudo mv llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64 /opt/llvm-mingw && \
-    rm llvm-mingw-20220906-msvcrt-ubuntu-18.04-x86_64.tar.xz
+RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20230614/llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
+    tar xf llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
+    sudo mv llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64 /opt/llvm-mingw && \
+    rm llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64.tar.xz
 RUN sudo dpkg --add-architecture i386 && \
     sudo apt-get update && \
     sudo apt-get upgrade -y && \
