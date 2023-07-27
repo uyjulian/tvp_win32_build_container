@@ -8,8 +8,10 @@ echo "DISPLAY=:2" >> "$GITHUB_ENV"
 
 # Setup Wine environment
 mkdir -p "$RUNNER_TEMP/mypfx"
-echo "WINEPREFIX=$RUNNER_TEMP/mypfx/wpfx" >> "$GITHUB_ENV"
-echo "WINEDLLOVERRIDES=mscoree,mshtml=" >> "$GITHUB_ENV"
+export WINEPREFIX=$RUNNER_TEMP/mypfx/wpfx
+echo "WINEPREFIX=$WINEPREFIX" >> "$GITHUB_ENV"
+export WINEDLLOVERRIDES=mscoree,mshtml=
+echo "WINEDLLOVERRIDES=$WINEDLLOVERRIDES" >> "$GITHUB_ENV"
 
 # Setup Wine
 wineboot -e
