@@ -10,6 +10,7 @@ COPY "./util_scripts" "/usr/local/util_scripts"
 
 RUN brew update && \
     brew upgrade && \
+    brew install xz && \
     brew install bash curl gnu-tar gzip bzip2 xz zstd p7zip openssl lhasa unzip gpatch dos2unix perl bc autoconf automake libtool pkg-config bison node git make nasm cmake ninja mingw-w64 && \
     brew cleanup -s && \
     rm -rf $(brew --cache)
