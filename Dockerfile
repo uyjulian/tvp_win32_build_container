@@ -13,10 +13,10 @@ RUN brew update && \
     brew install bash curl gnu-tar gzip bzip2 xz zstd p7zip openssl lhasa unzip gpatch dos2unix perl bc autoconf automake libtool pkg-config bison node git make nasm cmake ninja mingw-w64 && \
     brew cleanup -s && \
     rm -rf $(brew --cache)
-RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20230614/llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
-    tar xf llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
-    sudo mv llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64 /opt/llvm-mingw && \
-    rm llvm-mingw-20230614-msvcrt-ubuntu-20.04-x86_64.tar.xz
+RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20231128/llvm-mingw-20231128-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
+    tar xf llvm-mingw-20231128-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
+    sudo mv llvm-mingw-20231128-msvcrt-ubuntu-20.04-x86_64 /opt/llvm-mingw && \
+    rm llvm-mingw-20231128-msvcrt-ubuntu-20.04-x86_64.tar.xz
 RUN sudo dpkg --add-architecture i386 && \
     sudo apt-get update && \
     sudo apt-get upgrade -y && \
@@ -34,7 +34,7 @@ LABEL \
     org.label-schema.url="https://uyjulian.github.io/" \
     org.label-schema.vcs-url="https://github.com/uyjulian/tvp_win32_build_container" \
     org.label-schema.vendor="uyjulian" \
-    org.label-schema.version="0.0.1" \
+    org.label-schema.version="0.0.2" \
     org.label-schema.docker.cmd="docker container run --interactive --rm --tty ghcr.io/uyjulian/tvp_win32_build_container:latest" \
     org.label-schema.docker.cmd.test="docker container run --interactive --rm --tty ghcr.io/uyjulian/tvp_win32_build_container:latest /bin/true"
 
