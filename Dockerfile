@@ -10,8 +10,8 @@ COPY "./util_scripts" "/usr/local/util_scripts"
 
 RUN brew update && \
     brew upgrade && \
-    brew install xz && \
-    brew install bash curl gnu-tar gzip bzip2 xz zstd p7zip openssl lhasa unzip gpatch dos2unix perl bc autoconf automake libtool pkg-config bison node git make nasm cmake ninja mingw-w64 && \
+    brew install gzip bzip2 xz lz4 zlib zstd p7zip lhasa && \
+    brew install bash curl gnu-tar openssl unzip gpatch dos2unix perl bc autoconf automake libtool pkg-config bison node git make nasm cmake ninja mingw-w64 && \
     brew cleanup -s && \
     rm -rf $(brew --cache)
 RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20231128/llvm-mingw-20231128-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
