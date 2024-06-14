@@ -35,7 +35,7 @@ LABEL \
     org.label-schema.url="https://uyjulian.github.io/" \
     org.label-schema.vcs-url="https://github.com/uyjulian/tvp_win32_build_container" \
     org.label-schema.vendor="uyjulian" \
-    org.label-schema.version="0.0.2" \
+    org.label-schema.version="0.0.3" \
     org.label-schema.docker.cmd="docker container run --interactive --rm --tty ghcr.io/uyjulian/tvp_win32_build_container:latest" \
     org.label-schema.docker.cmd.test="docker container run --interactive --rm --tty ghcr.io/uyjulian/tvp_win32_build_container:latest /bin/true"
 
