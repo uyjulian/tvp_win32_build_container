@@ -11,7 +11,7 @@ COPY "./util_scripts" "/usr/local/util_scripts"
 RUN brew update && \
     brew upgrade && \
     brew install bzip2 xz lz4 zlib zstd && \
-    brew install python@3.11 python@3.12 gzip p7zip lhasa bash curl gnu-tar openssl unzip gpatch dos2unix perl bc autoconf automake libtool pkg-config bison node git make nasm cmake ninja mingw-w64 && \
+    brew install python@3.11 python@3.12 gzip p7zip lhasa bash curl gnu-tar openssl unzip gpatch dos2unix perl bc autoconf automake libtool pkg-config bison node git make nasm cmake ninja mingw-w64 meson && \
     brew cleanup -s && \
     rm -rf $(brew --cache)
 RUN curl -LO https://github.com/mstorsjo/llvm-mingw/releases/download/20250319/llvm-mingw-20250319-msvcrt-ubuntu-20.04-x86_64.tar.xz && \
